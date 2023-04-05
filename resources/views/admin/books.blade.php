@@ -187,7 +187,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="discounting">Discount</label>
-                        <input type="text" name="discounting" id="discounting" class="form-control" placeholder="Input discount">
+                        <input type="text" name="discounted" id="discounted" class="form-control" placeholder="Input discount">
                     </div>
                     <div class="mb-3">
                         <label for="binding">Binding</label>
@@ -349,7 +349,7 @@
                 $('#stock').val(stock);
                 $('#binding').val(binding);
                 $('#language').val(language);
-                $('#discount').val(discount);
+                $('#discounted').val(discount);
                 $('#price').val(price);
                 $('#r_price').val(r_price);
                 $('#buy_price').val(buy_price);

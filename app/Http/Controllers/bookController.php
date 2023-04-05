@@ -27,7 +27,7 @@ class bookController extends Controller
                     ->join('categories','categories.id','=','books.category_id')
                     ->join('sellers','sellers.id','=','books.seller_id')
                     ->join('publishes','publishes.id','=','books.publish_id')
-                    ->select('book','code','page','stock','binding','language','price','r_price','buy_price','discounted','author','category','seller','publisher','books.created_at','books.image','books.about','books.id')
+                    ->select('book','code','page','stock','binding','language','price','r_price','buy_price','discounted','author','category','seller','publisher','books.created_at','books.image','books.about','books.id','books.author_id','books.category_id','books.seller_id','books.publish_id')
                     ->orderBy('books.id','desc')
                     ->get();
 

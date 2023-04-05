@@ -7,6 +7,9 @@ use App\Http\Controllers\bookController;
 use App\Http\Controllers\sellerController;
 use App\Http\Controllers\publishController;
 use App\Http\Controllers\expenseController;
+use App\Http\Controllers\statisticsController;
+use App\Http\Controllers\userController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +21,9 @@ use App\Http\Controllers\expenseController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::group(['middleware'=>'notLogin'],function(){
+    Route::get('/statistics',[statisticsController::class,'index'])->name('statistics');
+
 Route::get('/category',[categoryController::class,'index'])->name('categories');
 Route::get('/showCategory',[categoryController::class,'getCategories']);
 Route::post('/saveCategory',[categoryController::class,'save']);
@@ -54,5 +60,15 @@ Route::get('/showExpense',[expenseController::class,'getExpenses']);
 Route::post('/saveExpense',[expenseController::class,'save']);
 Route::post('/updateExpense',[expenseController::class,'update']);
 Route::post('/deleteExpense',[expenseController::class,'delete']);
+});
+
+
+Route::get('/login_page',[AuthController::class,'login_index'])->name('login_page');
+Route::post('/login_submit',[AuthController::class,'login_submit'])->name('login_submit');
+Route::get('/signin',[userController::class,'signin_index'])->name('signin');
+Route::post('/signup',[userController::class,'signup'])->name('signup');
+
+
+
 
 

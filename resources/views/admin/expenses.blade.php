@@ -26,6 +26,88 @@
         </table>
     </div>
 </div>
+
+
+
+<!--/////////////////////////////////////////////////Expense\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+                                            <!--add modal-->
+                                            <div class="modal fade" id="expenseadd" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="myModalLabel">Add New Expense</h5>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <form action="{{URL::to('saveExpense')}}" id="expenseaddForm">
+                                                                <div class="mb-3">
+                                                                    <label for="expense">Expense</label>
+                                                                    <input type="text" name="expense" class="form-control" placeholder="Input Expense">
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <label for="exp_price">Price</label>
+                                                                    <input type="text" name="exp_price" class="form-control"  placeholder="Input Price">
+                                                                </div>
+                                                            
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                            <button type="submit" class="btn btn-primary">Save</button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                                                                        <!--edit modal-->
+                                            <div class="modal fade" id="expenseeditmodal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="myModalLabel">Edit Expense</h5>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <form action="{{URL::to('updateExpense')}}" id="expenseeditForm">
+                                                                <input type="hidden" id="expid" name="id">
+                                                                <div class="mb-3">
+                                                                    <label for="expense">Expense</label>
+                                                                    <input type="text" name="expense" id="expense" class="form-control" >
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <label for="exp_price">Price</label>
+                                                                    <input type="text" name="exp_price" id="exp_price" class="form-control" >
+                                                                </div>
+                                                            
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                            <button type="submit" class="btn btn-success">Update</button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                                                                        <!--delete modal-->
+                                            <div class="modal fade" id="expensedeletemodal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="myModalLabel">Delete Expense</h5>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                        <h4 class="text-center">Are you sure you want to delete Expense?</h4>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                            <button type="button" id="deleteexpense" class="btn btn-danger">Delete</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                                                        
     
 @endsection
 

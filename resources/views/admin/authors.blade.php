@@ -28,6 +28,95 @@
         </table>
     </div>
 </div>
+
+
+<!--/////////////////////////////////////////////////AUTHOR\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+                                                <!--add modal-->
+                                                <div class="modal fade" id="authoradd" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="myModalLabel">Add New Author</h5>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <form action="{{URL::to('saveAuthor')}}" id="authoraddForm" enctype="multipart/form-data">
+                                                                    <div class="mb-3">
+                                                                        <label for="author">Author</label>
+                                                                        <input type="text" name="author" class="form-control" placeholder="Input author">
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="about">About</label>
+                                                                        <textarea name="about" class="form-control" placeholder="Input about her/him"></textarea>
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <input type="file" name="image" class="form-control-file" >
+                                                                    </div>
+                                                                
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                <button type="submit" class="btn btn-primary">Save</button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                                                            <!--edit modal-->
+                                                <div class="modal fade" id="authoreditmodal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="myModalLabel">Edit Author</h5>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <form action="{{URL::to('updateAuthor')}}" id="authoreditForm" enctype="multipart/form-data">
+                                                                    <input type="hidden" id="autid" name="id">
+                                                                    <div class="mb-3">
+                                                                        <label for="author">Author</label>
+                                                                        <input type="text" name="author" id="author" class="form-control" >
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="about">About</label>
+                                                                        <textarea name="about" id="about" class="form-control" placeholder="Input about her/him"></textarea>
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label for="image">Image</label>
+                                                                        <input type="file" name="image" id="image" class="form-control-file" required="">
+                                                                        <img id="img" src="" height="50px" width="auto">
+                                                                    </div>
+                                                                
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                <button type="submit" class="btn btn-success">Update</button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                                                        <!--delete modal-->
+                                                <div class="modal fade" id="authordeletemodal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="myModalLabel">Delete Author</h5>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                               <h4 class="text-center">Are you sure you want to delete Author?</h4>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                <button type="button" id="deleteauthor" class="btn btn-danger">Delete</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
     
 @endsection
 

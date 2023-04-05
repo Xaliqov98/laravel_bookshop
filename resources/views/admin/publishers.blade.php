@@ -25,6 +25,79 @@
         </table>
     </div>
 </div>
+
+
+<!--/////////////////////////////////////////////////Publisher\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+                                            <!--add modal-->
+                                            <div class="modal fade" id="publisheradd" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="myModalLabel">Add New Publisher</h5>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <form action="{{URL::to('savePublish')}}" id="publisheraddForm">
+                                                                <div class="mb-3">
+                                                                    <label for="publisher">Publisher</label>
+                                                                    <input type="text" name="publisher" class="form-control" placeholder="Input Publisher">
+                                                                </div>
+                                                            
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                            <button type="submit" class="btn btn-primary">Save</button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                                                                        <!--edit modal-->
+                                            <div class="modal fade" id="publishereditmodal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="myModalLabel">Edit Publisher</h5>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <form action="{{URL::to('updatePublish')}}" id="publishereditForm">
+                                                                <input type="hidden" id="pubid" name="id">
+                                                                <div class="mb-3">
+                                                                    <label for="publisher">Publisher</label>
+                                                                    <input type="text" name="publisher" id="publisher" class="form-control" >
+                                                                </div>
+                                                            
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                            <button type="submit" class="btn btn-success">Update</button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                                                                        <!--delete modal-->
+                                            <div class="modal fade" id="publisherdeletemodal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="myModalLabel">Delete Publisher</h5>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                        <h4 class="text-center">Are you sure you want to delete Publisher?</h4>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                            <button type="button" id="deletepublisher" class="btn btn-danger">Delete</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
     
 @endsection
 
