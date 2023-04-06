@@ -10,6 +10,8 @@ use App\Http\Controllers\expenseController;
 use App\Http\Controllers\statisticsController;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\mainController;
+use App\Http\Controllers\singleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,13 +62,21 @@ Route::get('/showExpense',[expenseController::class,'getExpenses']);
 Route::post('/saveExpense',[expenseController::class,'save']);
 Route::post('/updateExpense',[expenseController::class,'update']);
 Route::post('/deleteExpense',[expenseController::class,'delete']);
+
+Route::get('/main',[mainController::class,'index'])->name('main');
+Route::get('/single/{id}',[singleController::class,'index'])->name('single');
+});
+
+Route::group(['middleware'=>'isLogin'],function(){
+  
+    Route::get('/login_page',[AuthController::class,'login_index'])->name('login_page');
+    Route::post('/login_submit',[AuthController::class,'login_submit'])->name('login_submit');
+    Route::get('/signin',[userController::class,'signin_index'])->name('signin');
+    Route::post('/signup',[userController::class,'signup'])->name('signup');
 });
 
 
-Route::get('/login_page',[AuthController::class,'login_index'])->name('login_page');
-Route::post('/login_submit',[AuthController::class,'login_submit'])->name('login_submit');
-Route::get('/signin',[userController::class,'signin_index'])->name('signin');
-Route::post('/signup',[userController::class,'signup'])->name('signup');
+
 
 
 

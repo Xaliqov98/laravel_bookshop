@@ -11,8 +11,7 @@
         @csrf
         <div class="mb-3">
           <label for="email" class="form-label">Email address</label>
-          <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp">
-          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          <input type="email" class="form-control" name="email" id="email">
         </div>
         <div class="mb-3">
           <label for="password" class="form-label">Password</label>
